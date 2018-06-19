@@ -5,8 +5,17 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#只有在開發及測試環境用到的套件
+gem 'sqlite3', group: [ :development, :test ] 
+#只有在上線環境用到的套件
+group :production do
+gem 'pg'
+#只有在上線環境用到的套件
+gem 'rails_12factor'
+end
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
