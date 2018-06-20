@@ -6,9 +6,8 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 
-# Use sqlite3 as the database for Active Record
-#只有在開發及測試環境用到的套件
-gem 'sqlite3', group: [ :development, :test ] 
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 #只有在上線環境用到的套件
 group :production do
 gem 'pg'
@@ -69,3 +68,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'bcrypt'
